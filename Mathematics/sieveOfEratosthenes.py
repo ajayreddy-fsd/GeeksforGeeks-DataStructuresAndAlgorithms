@@ -1,13 +1,17 @@
-from checkPrime import checkPrime
+def allPrimesLessThanN(n):
+    arr = [True]*(n+1)
 
-def f(n):
-    arr = [True]*n
-
-    for i in range(2,n+1):
-        if n%i == 0:
-            arr[i] = False
-
-    for i in arr:
-        if i:
+    for i in range(2, len(arr)):
+        if arr[i]:
             print(i, end=' ')
-f(100)
+
+            j = i*i
+            # why not start from i+i,
+            # coz mulitples of numbers which are less than i,
+            # have already made composite numbers less than i^2 False
+            while j < n+1:
+                arr[j] = False
+                j += i
+
+
+allPrimesLessThanN(1000)
