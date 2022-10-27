@@ -265,5 +265,3 @@ def countSetBits(n):
         lookUpTable[255 & (n >> 16)] + \
         lookUpTable[255 & (n >> 24)]
 
-
-print(countSetBits(4278305223))
